@@ -1,0 +1,329 @@
+/* ==========================================================================
+   Microfinance Fraud Detection — Dashboard Stylesheet
+   Direction: an underwriter's ledger, not a generic dark-mode SaaS panel.
+   Ink-navy surfaces, brass accent, serif headings, monospace figures,
+   and a stamped badge for the verdict.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap');
+
+:root {
+    --ink-950: #0B1119;
+    --ink-900: #101823;
+    --ink-800: #17212D;
+    --ink-700: #1F2B39;
+    --line: #2A3948;
+
+    --text-primary: #E7ECF2;
+    --text-muted: #8B98A9;
+
+    --brass: #C9A24B;
+    --brass-soft: rgba(201, 162, 75, 0.14);
+
+    --genuine: #3FB68B;
+    --genuine-soft: rgba(63, 182, 139, 0.12);
+
+    --fraud: #E2574C;
+    --fraud-soft: rgba(226, 87, 76, 0.12);
+
+    --warn: #E0A93E;
+    --warn-soft: rgba(224, 169, 62, 0.12);
+
+    --font-display: 'Source Serif 4', Georgia, serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* -------------------------------------------------------------------- */
+/* App shell                                                            */
+/* -------------------------------------------------------------------- */
+
+.stApp {
+    background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(201, 162, 75, 0.06), transparent 60%),
+        var(--ink-950);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+}
+
+[data-testid="stHeader"] {
+    background: transparent;
+}
+
+section.main > div {
+    padding-top: 1.5rem;
+}
+
+/* -------------------------------------------------------------------- */
+/* Typography                                                           */
+/* -------------------------------------------------------------------- */
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-weight: 600;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.4rem;
+}
+
+h2, h3 {
+    font-weight: 600;
+}
+
+p, li, label, span {
+    color: var(--text-muted);
+}
+
+.stMarkdown strong {
+    color: var(--text-primary);
+}
+
+/* Ledger-style eyebrow under the title, if you add one via st.caption */
+.stCaption, [data-testid="stCaptionContainer"] {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.72rem !important;
+    color: var(--brass) !important;
+}
+
+/* -------------------------------------------------------------------- */
+/* Sidebar                                                              */
+/* -------------------------------------------------------------------- */
+
+[data-testid="stSidebar"] {
+    background: var(--ink-900);
+    border-right: 1px solid var(--line);
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+}
+
+/* -------------------------------------------------------------------- */
+/* Tabs                                                                 */
+/* -------------------------------------------------------------------- */
+
+[data-testid="stTabs"] [data-baseweb="tab-list"] {
+    gap: 4px;
+    border-bottom: 1px solid var(--line);
+}
+
+[data-testid="stTabs"] button[role="tab"] {
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: var(--text-muted);
+    background: transparent;
+    border-radius: 6px 6px 0 0;
+    padding: 0.5rem 1rem;
+}
+
+[data-testid="stTabs"] button[role="tab"][aria-selected="true"] {
+    color: var(--brass);
+    background: var(--brass-soft);
+    border-bottom: 2px solid var(--brass);
+}
+
+/* -------------------------------------------------------------------- */
+/* Inputs — number, select, slider                                      */
+/* -------------------------------------------------------------------- */
+
+.stNumberInput input,
+.stSelectbox div[data-baseweb="select"] > div,
+.stTextInput input {
+    background: var(--ink-800) !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 6px !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-mono) !important;
+}
+
+.stNumberInput input:focus,
+.stTextInput input:focus {
+    border-color: var(--brass) !important;
+    box-shadow: 0 0 0 1px var(--brass) !important;
+}
+
+.stSlider [data-baseweb="slider"] div[role="slider"] {
+    background-color: var(--brass) !important;
+    border-color: var(--brass) !important;
+}
+
+.stSlider [data-baseweb="slider"] > div > div {
+    background: var(--brass) !important;
+}
+
+/* -------------------------------------------------------------------- */
+/* Buttons                                                              */
+/* -------------------------------------------------------------------- */
+
+.stButton > button {
+    width: 100%;
+    background: var(--brass);
+    color: var(--ink-950);
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: none;
+    border-radius: 6px;
+    padding: 0.65rem 1rem;
+    transition: transform 0.08s ease, box-shadow 0.15s ease;
+}
+
+.stButton > button:hover {
+    background: #D9B25C;
+    box-shadow: 0 4px 14px rgba(201, 162, 75, 0.25);
+}
+
+.stButton > button:active {
+    transform: scale(0.99);
+}
+
+/* -------------------------------------------------------------------- */
+/* Metrics                                                              */
+/* -------------------------------------------------------------------- */
+
+[data-testid="stMetric"] {
+    background: var(--ink-800);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+}
+
+[data-testid="stMetricLabel"] {
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.7rem !important;
+    color: var(--text-muted) !important;
+}
+
+[data-testid="stMetricValue"] {
+    font-family: var(--font-mono) !important;
+    font-weight: 700 !important;
+    color: var(--text-primary) !important;
+}
+
+/* -------------------------------------------------------------------- */
+/* Alerts — success / error / info, used as the verdict + risk callouts */
+/* -------------------------------------------------------------------- */
+
+[data-testid="stAlert"] {
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    font-family: var(--font-body);
+    font-weight: 600;
+}
+
+/* Success = Genuine */
+div[data-baseweb="notification"][kind="positive"],
+[data-testid="stAlertContentSuccess"] {
+    background: var(--genuine-soft) !important;
+    border-color: var(--genuine) !important;
+    color: var(--genuine) !important;
+}
+
+/* Error = Fraud */
+[data-testid="stAlertContentError"] {
+    background: var(--fraud-soft) !important;
+    border-color: var(--fraud) !important;
+    color: var(--fraud) !important;
+}
+
+/* Info panels (sidebar dataset summary) */
+[data-testid="stAlertContentInfo"] {
+    background: var(--brass-soft) !important;
+    border-color: var(--brass) !important;
+    color: var(--text-primary) !important;
+}
+
+/* -------------------------------------------------------------------- */
+/* Signature element — the verdict "stamp"                              */
+/* Wrap your result markup in a div with class "verdict-stamp" and add  */
+/* "stamp-fraud" or "stamp-genuine" to color it, e.g. via st.markdown:  */
+/*                                                                       */
+/*   st.markdown(                                                       */
+/*       '<div class="verdict-stamp stamp-genuine">GENUINE — CLEARED'   */
+/*       '</div>', unsafe_allow_html=True                               */
+/*   )                                                                   */
+/* -------------------------------------------------------------------- */
+
+.verdict-stamp {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.55rem 1.4rem;
+    border: 2px solid currentColor;
+    border-radius: 2px;
+    transform: rotate(-2deg);
+    position: relative;
+}
+
+.verdict-stamp::before {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border: 1px solid currentColor;
+    opacity: 0.5;
+    border-radius: 1px;
+}
+
+.stamp-genuine {
+    color: var(--genuine);
+    background: var(--genuine-soft);
+}
+
+.stamp-fraud {
+    color: var(--fraud);
+    background: var(--fraud-soft);
+}
+
+.stamp-medium {
+    color: var(--warn);
+    background: var(--warn-soft);
+}
+
+/* -------------------------------------------------------------------- */
+/* Dividers                                                              */
+/* -------------------------------------------------------------------- */
+
+hr {
+    border-color: var(--line) !important;
+}
+
+/* -------------------------------------------------------------------- */
+/* Scrollbar polish (webkit)                                             */
+/* -------------------------------------------------------------------- */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--ink-950);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--ink-700);
+    border-radius: 5px;
+    border: 2px solid var(--ink-950);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brass);
+}
