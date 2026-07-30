@@ -54,3 +54,4 @@ widgetsnbextension==4.0.15
 matplotlib==3.10.5
 seaborn==0.13.2
 plotly==6.3.0
+streamlit
