@@ -1,20 +1,7 @@
-# Virtual Environment
-.venv/
-.venv-1/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Python
 __pycache__/
 *.pyc
-
-# Model Files
-models/*.pkl
-
-# VS Code
-.vscode/
-
-# OS Files
+.venv/
+.venv-1/
+.ipynb_checkpoints/
+catboost_info/
 .DS_Store
-Thumbs.db
