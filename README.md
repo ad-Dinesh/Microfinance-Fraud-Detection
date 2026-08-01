@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏦 Microfinance Fraud Detection System
+#  Microfinance Fraud Detection System
 
 ### Intelligent Fraud Detection using Machine Learning & Predictive Analytics
 
