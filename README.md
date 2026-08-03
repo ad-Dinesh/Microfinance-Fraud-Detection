@@ -471,7 +471,7 @@ streamlit run dashboard/app.py
 
 ---
 
-# 🚀 Quick Start
+#  Quick Start
 
 Once the application starts:
 
